@@ -14,6 +14,9 @@ let dat = new mod({dname:"hardik"});
 router.get('/Contact', (req, res)=>{
     res.render('home');
 });
+router.get('/', (req, res)=>{
+    res.render('home');
+});
 
 router.get('/data', (req, res)=>{
 mod.find({dname:"hardik"},function(err,dat){

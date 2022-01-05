@@ -16,18 +16,9 @@ app.set('view engine', 'handlebars');
 // Resources
 
 // Setting up the router 
+app.use(express.static(path.join(__dirname,'static')))
+app.use('/',require('./router'));
 
-// app.use('/techwiz',require('./router'));
-app.get('/',(req,res)=>{
-    app.use(express.static(path.join(__dirname,"static")))
-    res.render('home');
-})
-app.get('/techwhiz',(req,res)=>{
-    // app.use(express.static(path.join(__dirname, './tester/build')));
-    // app.use(express.static(path.join(__dirname, './tester/public')));
-    // res.sendFile(path.join(__dirname,'./tester/build/index.html'));
-
-})
 
 
 
@@ -35,3 +26,4 @@ app.get('/techwhiz',(req,res)=>{
 app.listen(port,(req,res)=>{
     console.log(`app listening at port ${port}`)
 })
+
